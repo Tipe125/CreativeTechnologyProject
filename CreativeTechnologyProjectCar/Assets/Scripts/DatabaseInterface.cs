@@ -145,6 +145,7 @@ public class DatabaseInterface : MonoBehaviour {
                         GameObject instance = Instantiate(heatmapPoints, finalTransform, Quaternion.identity);
 
                         instance.GetComponent<Renderer>().material.color = new Color(0, 50, 0);
+                        instance.GetComponent<Light>().color = new Color(0, 25, 0);
                         cubes.Add(instance);
                         makeCubeGreen = false;
                     }
@@ -218,6 +219,7 @@ public class DatabaseInterface : MonoBehaviour {
                         GameObject instance = Instantiate(heatmapPoints, finalTransform, Quaternion.identity);
 
                         instance.GetComponent<Renderer>().material.color = new Color(0, 50, 0);
+                        instance.GetComponent<Light>().color = new Color(0, 25, 0);
                         cubes.Add(instance);
                         makeCubeGreen = false;
                     }
@@ -282,6 +284,7 @@ public class DatabaseInterface : MonoBehaviour {
                         GameObject instance = Instantiate(heatmapPoints, finalTransform, Quaternion.identity);
                         
                         instance.GetComponent<Renderer>().material.color = new Color(0, 50, 0);
+                        instance.GetComponent<Light>().color = new Color(155, 255, 155);
                         cubes.Add(instance);
                         makeCubeGreen = false;
                     }
@@ -312,8 +315,10 @@ public class DatabaseInterface : MonoBehaviour {
                     
                     //increase colour intensity of cube i
                     makeCube = false;
-                    Color currentColor = cubes[i].GetComponent<Renderer>().material.color;
-                    cubes[i].GetComponent<Renderer>().material.color = currentColor + new Color(1, 0, 0);
+                    Color currentColor = cubes[i].GetComponent<Light>().color;
+                   // cubes[i].GetComponent<Renderer>().material.color = currentColor + new Color(1, 0, 0);
+                    cubes[i].GetComponent<Light>().color = currentColor + new Color(0, -1, -1);
+                    cubes[i].GetComponent<Light>().intensity += 0.01f;
                 }
                 
             }
