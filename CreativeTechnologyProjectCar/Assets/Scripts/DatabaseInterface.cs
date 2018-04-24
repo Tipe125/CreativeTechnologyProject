@@ -445,20 +445,28 @@ public class DatabaseInterface : MonoBehaviour {
 
             for (int i = 0; i < noOfRunsInt; i++)
             {
+                if (i % 6 == 0 && i != 0)
+                {
+                    Debug.Log("THis is happening");
+                    posY = 275;
+                    posX += 180;
+                }
                 Dropdown instance = Instantiate(runNumberPrefab);
 
                 instance.transform.position = new Vector3(posX, posY, 0);
                 instance.transform.parent = interfaceCanvas.transform;
                 dropdowns.Add(instance);
                 
-                posY -= 50;
+                
+                
+               
+                    posY -= 50;
+                
+
+
                 dropdowns[i].ClearOptions();
                 dropdowns[i].AddOptions(runIDs);
-                if(i >= 6)
-                {
-                    posY = 275;
-                    posX += 90;
-                }
+                
                 //dropdowns.Add()
 
             }

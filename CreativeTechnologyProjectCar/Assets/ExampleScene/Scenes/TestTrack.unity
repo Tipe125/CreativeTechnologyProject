@@ -2553,21 +2553,6 @@ Prefab:
       propertyPath: cam
       value: 
       objectReference: {fileID: 870953543}
-    - target: {fileID: 224008905717603118, guid: 5f570b9582e8e4047a14d1a9563d2057,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 224008905717603118, guid: 5f570b9582e8e4047a14d1a9563d2057,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -349
-      objectReference: {fileID: 0}
-    - target: {fileID: 224047283166738884, guid: 5f570b9582e8e4047a14d1a9563d2057,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -17
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f570b9582e8e4047a14d1a9563d2057, type: 2}
   m_IsPrefabParent: 0
