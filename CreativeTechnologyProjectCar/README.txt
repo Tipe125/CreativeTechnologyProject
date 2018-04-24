@@ -48,6 +48,9 @@ checkbox. For example, if you tick the 'collision entered' checkbox and enter 'C
 into the textbox below it, whenever the object collides with another object an entry will
 be created with the word 'Crashed' in the Custom Event Column. 
 
+In any heatmaps created, entries involving a custom event will be shown using a green point 
+rather than the usual red shades. 
+
 Database Interface - The Database Interface utilises the Databases populated by the 
 Object Tracker and the Snapshot Camera to create heatmaps visualising the transforms
 of the tracked object in one or several runs. To set up the Database Interface, place
@@ -66,7 +69,7 @@ This will create a heatmap which will be stored within the 'Screenshots' folder.
 You can also create a heatmap using one of the two set queries - 'All Runs from Date' and 'All
 Runs with Event'. The former lets you choose from the dates of every run in the database and 
 generate a heatmap from all runs performed on that date. The latter allows you to find all runs
-that have an entry with the chosen custom event and generate a heatmap using those runs.
+that have an entry with the chosen custom event and generate a heatmap using those runs. 
 
 Playback Bot - The Playback Bot uses the RunData files created by the Object Tracker as reference
 to simulate the movements of the tracked object in a given run. To use the Playback Bot you will 
