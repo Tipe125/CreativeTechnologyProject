@@ -18,7 +18,8 @@ public class SnapshotCamera : MonoBehaviour {
     public int resHeight = 3300;
     public GameObject[] invisibleObjects;
 
-
+    //Code from 'Jashan' on implementing the functionality for screenshots at runtime. 
+    //https://answers.unity.com/questions/22954/how-to-save-a-picture-take-screenshot-from-a-camer.html
     public static string ScreenShotName(int width, int height)
     {
         return string.Format("{0}/screenshots/screen_{1}x{2}_{3}.png",
@@ -45,12 +46,13 @@ public class SnapshotCamera : MonoBehaviour {
 
     public void TakeScreenshot()
     {
+        //Code to disable objects that may obstruct camera view before a shot is taken.
         foreach (GameObject invisObject in invisibleObjects)
         {
             invisObject.gameObject.SetActive(false);
         }
 
-
+        //More Code from 'Jashan' on taking a screenshot within Unity. 
         //https://answers.unity.com/questions/22954/how-to-save-a-picture-take-screenshot-from-a-camer.html
         RenderTexture rt = new RenderTexture(resWidth, resHeight, 24);
         this.gameObject.GetComponent<Camera>().targetTexture = rt;
@@ -66,6 +68,8 @@ public class SnapshotCamera : MonoBehaviour {
         System.IO.File.WriteAllBytes(filename, bytes);
         Debug.Log(string.Format("Took screenshot to: {0}", filename));
 
+
+        //Setting the objects that were disabled back to active.
         foreach (GameObject invisObject in invisibleObjects)
         {
             invisObject.gameObject.SetActive(true);
